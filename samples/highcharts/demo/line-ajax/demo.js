@@ -2,7 +2,8 @@
 
 // Get the CSV and create the chart
 $.ajax({
-    url: 'https://cdn.rawgit.com/highcharts/highcharts/v6.0.4/samples/data/analytics.csv',
+    //url: 'https://cdn.rawgit.com/highcharts/highcharts/v6.0.4/samples/data/analytics.csv',
+    url: '/samples/data/analytics.csv',
     success: function (csv) {
         Highcharts.chart('container', {
 
@@ -80,7 +81,7 @@ $.ajax({
                                     },
                                     headingText: this.series.name,
                                     maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
-                                        this.y + ' visits',
+                                        this.y + ' sessions',
                                     width: 200
                                 });
                             }
@@ -93,13 +94,13 @@ $.ajax({
             },
 
             series: [{
-                name: 'All visits',
+                name: 'All sessions',
                 lineWidth: 4,
                 marker: {
                     radius: 4
                 }
             }, {
-                name: 'New visitors'
+                name: 'New users'
             }]
         });
     }
